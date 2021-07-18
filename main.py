@@ -15,7 +15,7 @@ class StackLayoutExample(StackLayout):
         for i in range(100):
             # size = dp(100) + i*10
             size = dp(100)
-            b = Button(text=f"{i+1}", size_hint=(None, None), size=(size, size))
+            b = Button(text=f"{i + 1}", size_hint=(None, None), size=(size, size))
             self.add_widget(b)
 
 
@@ -23,12 +23,14 @@ class StackLayoutExample(StackLayout):
 #     pass
 
 
-class GridLayoutExample(AnchorLayout):
+class AnchorLayoutExample(AnchorLayout):
     pass
 
 
 class BoxLayoutExample(BoxLayout):
     pass
+
+
 '''
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
