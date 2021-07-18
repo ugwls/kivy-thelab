@@ -1,11 +1,33 @@
 from kivy.app import App
 from kivy.metrics import dp
+from kivy.properties import StringProperty
 from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.stacklayout import StackLayout
 from kivy.uix.widget import Widget
+
+
+class WidgetExample(GridLayout):
+    counter = 1
+    counter_state = False
+    my_text = StringProperty("1")
+
+    def on_button_click(self):
+        print("Button Clicked")
+        if self.counter_state:
+            self.counter += 1
+            self.my_text = f"{self.counter}"
+
+    def on_toggle_button_state(self, widget):
+        print("toggle state: " + widget.state)
+        if widget.state == "normal":
+            self.counter_state = False
+            widget.text = "OFF"
+        else:
+            widget.text = "ON"
+            self.counter_state = True
 
 
 class StackLayoutExample(StackLayout):
