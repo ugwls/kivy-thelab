@@ -2,6 +2,7 @@ WidgetExample:
 
 
 <WidgetExample>:
+    padding: 10
     cols: 3
     ToggleButton:
         text: "OFF"
@@ -12,11 +13,40 @@ WidgetExample:
     Button:
         text: "Count"
         on_press: root.on_button_click()
+        disabled: not root.counter_state
     Label:
         text: root.my_text
         font_name: "fonts/Lcd.ttf"
         font_size: "80dp"
         color: 1,.5,1,1
+
+    Switch:
+        id: my_switch
+        on_active: root.on_switch_active(self)
+        size_hint: None ,1
+        width: "100dp"
+        active: True
+
+    Slider:
+        id: my_slider
+        min: 0
+        max: 100
+        # value: 50
+        # on_value: root.on_slider_value(self)
+        disabled: not my_switch.active
+        orientation: "vertical"
+
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: str(int(my_slider.value))
+            font_name: "fonts/Lcd.ttf"
+            font_size: "50dp"
+            color: 1,.5,.5,1
+
+        ProgressBar:
+            max: 100
+            value: my_slider.value
 
 <PageLayoutExample@PageLayout>:
     MainWidget:
