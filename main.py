@@ -88,4 +88,8 @@ class TheLabApp(App):
     pass
 
 
+class CanvasExample1(Widget):
+    pass
+
+
 TheLabApp().run()
