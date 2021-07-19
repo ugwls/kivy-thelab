@@ -48,6 +48,21 @@ WidgetExample:
             max: 100
             value: my_slider.value
 
+    TextInput:
+        id: my_text_input
+        size_hint: None ,1
+        width: "100dp"
+        text: "foo"
+        multiline: False
+        on_text_validate: root.on_text_validate(self)
+
+    Label:
+        text: root.text_input_str
+        font_size: "20dp"
+        color: .5,.5,.5,1
+
+
+
 <PageLayoutExample@PageLayout>:
     MainWidget:
     BoxLayoutExample:
