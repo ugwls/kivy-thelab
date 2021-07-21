@@ -1,6 +1,25 @@
-CanvasExample2:
+CanvasExample3:
 
 #:set s dp(150)
+
+<CanvasExample3>:
+    canvas:
+        Color:
+            rgba: 1, 0, 0, .3
+        Line:
+            circle: (110, 110, 100) # center_x, center_y, radius
+            width: 2
+        Color:
+            rgba: 0, 0, 1, .5
+        Line:
+            ellipse: (200, 200, 100, 200) # center_x, center_y, radius_x, radius_y
+            width: 4
+        Color:
+            rgba: 0, 1, 0, .9
+        Line:
+            rectangle: (400, 100, 300, 200) # x, y, width, height
+            width: 2
+
 
 <CanvasExample1>:
     canvas:
